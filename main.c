@@ -32,10 +32,12 @@ static void init( void )
 	PORTC = 0xFF;
 	DDRD  = 0;
 	PORTD = 0xFF;
+#if !defined(__AVR_AT90USB162__)
 	DDRE  = 0;
 	PORTE = 0xFF;
 	DDRF  = 0;
 	PORTF = 0xFF;
+#endif
 	
 	power_all_disable();
 	power_usb_enable();
